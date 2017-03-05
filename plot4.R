@@ -29,7 +29,7 @@ homepower_two_days<- homepower[start:end,]
 
 # plot 4
 # open file
-png(filename="plot4.png")
+png(filename="plot4.png",width = 480, height = 480)
 par(mfcol=c(2,2))
 
 plot(homepower_two_days$time, homepower_two_days$Global_active_power,type = "l",

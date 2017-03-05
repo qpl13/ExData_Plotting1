@@ -29,7 +29,7 @@ homepower_two_days<- homepower[start:end,]
 
 # plot 3
 # open file
-png(filename="plot3.png")
+png(filename="plot3.png",width = 480, height = 480)
 plot(homepower_two_days$time, homepower_two_days$Sub_metering_1,type = "l",
      ylab="Energy sub metering", xlab="")
   lines(homepower_two_days$time, homepower_two_days$Sub_metering_2,col="red")

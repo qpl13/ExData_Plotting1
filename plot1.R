@@ -29,7 +29,7 @@ homepower_two_days<- homepower[start:end,]
 
 # plot 1
 # open file
-png(filename="plot1.png")
+png(filename="plot1.png", width = 480, height = 480)
 # draw hist graph
 hist(homepower_two_days$Global_active_power, main="global Active Power",
      xlab="Global Active Power (Kilowatts)", col="red")
