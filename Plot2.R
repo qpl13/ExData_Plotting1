@@ -11,7 +11,7 @@ setwd ("c:/Users/ren/documents/R/myproject")
 #read data file as data frame
 
 homepower<- read.table("household_power_consumption.txt", 
-                       header=TRUE, sep= ";",na.strings="?",)
+                       header=TRUE, sep= ";",na.strings="?")
 
 
 # combine Date and Time to form 1 column called time.
@@ -28,7 +28,10 @@ end<- which(homepower$time==strptime("2007-02-02 23:59:00", "%Y-%m-%d %H:%M:%S")
 homepower_two_days<- homepower[start:end,]
 
 # plot 2
+# open file
+png(filename="plot2.png")
 plot(homepower_two_days$time, homepower_two_days$Global_active_power,type = "l",
      
      ylab="Global Active Power (Kilowatts)", xlab="", col="black")
-
+# save file
+dev.off()

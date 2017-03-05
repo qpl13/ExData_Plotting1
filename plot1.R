@@ -11,7 +11,7 @@ setwd ("c:/Users/ren/documents/R/myproject")
 #read data file as data frame
 
 homepower<- read.table("household_power_consumption.txt", 
-                       header=TRUE, sep= ";",na.strings="?",)
+                       header=TRUE, sep= ";",na.strings="?")
 
 
 # combine Date and Time to form 1 column called time.
@@ -28,6 +28,10 @@ end<- which(homepower$time==strptime("2007-02-02 23:59:00", "%Y-%m-%d %H:%M:%S")
 homepower_two_days<- homepower[start:end,]
 
 # plot 1
+# open file
+png(filename="plot1.png")
+# draw hist graph
 hist(homepower_two_days$Global_active_power, main="global Active Power",
      xlab="Global Active Power (Kilowatts)", col="red")
-
+# save file
+dev.off()
